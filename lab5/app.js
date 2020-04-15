@@ -6,7 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const apiTodosRouter = require('./routes/api/v1/todos');
+const apiChatsRouter = require('./routes/api/v1/chats');
 const passport = require('./passport/passport');
 const config = require('config');
 
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/v1/todos', passport.authenticate('jwt', { session: false }), apiTodosRouter)
+app.use('/api/v1/chats', passport.authenticate('jwt', { session: false }), apiChatsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
