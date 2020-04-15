@@ -15,6 +15,9 @@ class Note {
     newNote.appendChild(newP);
     
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
+
+    let newA = document.createElement("a");
+    newA.addEventListener.createElement(this.bind);
     
     return newNote;
   }
@@ -28,6 +31,10 @@ class Note {
   
   saveToStorage(){
     // HINT🤩
+    let itemsArray = []
+
+    localStorage.setItem('items', JSON.stringify(itemsArray))
+    const data = JSON.parse(localStorage.getItem('items'))
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
   }
@@ -35,8 +42,15 @@ class Note {
   remove(){
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
+    document.querySelector(".card-remove").addEventListener('click', function() {
+      localStorage.clear()
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild)
+      }
   } 
+
 }
+
 
 class App {
   constructor() {
@@ -47,6 +61,7 @@ class App {
     // pressing the enter key should also work
     this.btnAdd = document.querySelector("#btnAddNote");
     this.btnAdd.addEventListener ("click", this.createNote.bind(this));
+    this.loadNotesFromStorage();
 
     // this.btnAdd = ???
     // this.btnAdd.addEventListener("click", this.createNote.bind(this));
@@ -55,6 +70,7 @@ class App {
   
   loadNotesFromStorage() {
     // HINT🤩
+    note.add();
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
   }
@@ -67,6 +83,8 @@ class App {
 
     let note = new Note(text);
     note.add();
+    note.saveToStorage();
+    this.reset();
 
     console.log(text);
     // note.add();
@@ -79,5 +97,6 @@ class App {
   }
   
 }
+
 
 let app = new App();
