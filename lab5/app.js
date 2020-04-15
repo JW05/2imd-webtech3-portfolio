@@ -16,7 +16,6 @@ mongoose.set('useCreateIndex',true);
 // load dbconn from procces.env
 mongoose.connect(process.env.dbconn || config.get('Database.conn'), {useNewUrlParser: true, useUnifiedTopology: true});
 
-
 const app = express();
 
 // view engine setup
