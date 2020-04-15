@@ -16,5 +16,4 @@ router.post('/login',authController.login);
   // databanks
 
 
-
 module.exports = router;

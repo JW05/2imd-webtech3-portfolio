@@ -1,3 +1,5 @@
+const base_url = "https://todo-nodejs-jw05.herokuapp.com/";
+
 var btnlogin = document.querySelector(".login button").addEventListener("click",(e) => {
     let username = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
