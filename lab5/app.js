@@ -10,7 +10,6 @@ const apiChatsRouter = require('./routes/api/v1/chats');
 const passport = require('./passport/passport');
 const config = require('config');
 
-
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex',true);
 // load dbconn from procces.env
