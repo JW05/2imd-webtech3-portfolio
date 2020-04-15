@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const todoSchema = new Schema({
+const chatSchema = new Schema({
     text: {
         type: String,
         required : true
@@ -8,6 +8,6 @@ const todoSchema = new Schema({
     user: String,
     completed: Boolean
 })
-const Todo = mongoose.model('Todo',todoSchema);
+const Todo = mongoose.model('Todo',chatSchema);
 
 module.exports = Todo;

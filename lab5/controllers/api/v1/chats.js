@@ -1,4 +1,4 @@
-const Todo = require('../../../models/Todo');
+const Todo = require('../../../models/Chat');
 
 
 
@@ -10,7 +10,7 @@ const getAll =(req,res)=> {
             res.json({
                     "status":"succes",
                     "data":{
-                        "todos":docs
+                        "chats":docs
                     }
                 });
 
